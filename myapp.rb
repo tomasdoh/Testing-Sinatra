@@ -17,6 +17,7 @@ get '/more' do
 end
 
 get '/cat' do
+  @cat_random_name = ["Amigo", "Oscar", "Viking"].sample
   erb(:index)
 end
 
