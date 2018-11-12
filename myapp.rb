@@ -16,8 +16,14 @@ get '/more' do
   "more content"
 end
 
-get '/cat' do
+get '/random-cat' do
   @cat_random_name = ["Amigo", "Oscar", "Viking"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  p params
+  @cat_random_name = params[:name]
   erb(:index)
 end
 
