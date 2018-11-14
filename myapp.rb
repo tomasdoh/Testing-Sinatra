@@ -17,14 +17,18 @@ get '/more' do
 end
 
 get '/random-cat' do
-  @cat_random_name = ["Amigo", "Oscar", "Viking"].sample
+  @name = ["Amigo", "Oscar", "Viking"].sample
   erb(:index)
 end
 
-get '/named-cat' do
+post '/named-cat' do
   p params
-  @cat_random_name = params[:name]
+  @name = params[:name]
   erb(:index)
+end
+
+get '/cat-form' do
+  erb(:form)
 end
 
 # <@page_title = 'CAT'
